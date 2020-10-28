@@ -143,3 +143,16 @@
   height: 50px;
   width: 50px;
 }
+.font-size14{
+    font-size: 14px;
+}
+.margin5percent{
+    margin: 5%;
+}
+.cardCar{
+    width: 40%;
+    margin-right: 5%;
+}
+.flex-wrap{
+    flex-wrap: wrap;
+}
