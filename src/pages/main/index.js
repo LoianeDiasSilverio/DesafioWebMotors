@@ -19,7 +19,8 @@ export default class Main extends Component {
             listModel: [{ID: 0, Name: 'Todos'}],
             listVersion: [{ID: 0, Name: 'Todos'}],
             listCars: [],
-            numberPage: 1
+            numberPage: 1,
+            loading: false
         }
 
         this.doRequest();
@@ -31,16 +32,17 @@ export default class Main extends Component {
     }
 
     async getCars(){
+        this.setState({loading: true})
         try{
-            const responseCars = await new CarService().getCarRequest(1);
+            const responseCars = await new CarService().getCarRequest(this.state.numberPage);
             if(responseCars.data){
-                this.setState({listCars: responseCars.data})
+                this.setState({listCars: responseCars.data, loading: false})
                 return;
             }
-            this.setState({listCars: []})
+            this.setState({listCars: [], loading: false})
         }catch(error){
             debugger;
-            this.setState({listCars: []})
+            this.setState({listCars: [], loading: false})
         }
     }
 
@@ -116,6 +118,13 @@ export default class Main extends Component {
     handleModel = (event) =>{
         const idModel =  event.target.value;
         this.getVersion(idModel);
+    }
+
+    getMorePage(){
+        this.setState({loading: true})
+        const number = this.state.numberPage + 1;
+        this.getCars(number);
+        this.setState({numberPage: this.state.numberPage + 1})
     }
 
     render(){
@@ -220,22 +229,28 @@ export default class Main extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="box-branco flex-row">
+                <div className="margin-top20">
                 {this.state.listCars.length === 0 && <div className="box-branco">Nenhum</div>}
-                {this.state.listCars.length !== 0 && this.state.listCars.map((car) => {
-                    <div>
-                        <img src={car.Image} />
-                        <p>Marca: {car.Make}</p>
-                        <p>Modelo: {car.Model}</p>
-                        <p>Versão: {car.Version}</p>
-                        <p>KM: {car.KM}</p>
-                        <p>Preço: {car.Price}</p>
-                        <p>Ano modelo: {car.YearModel}</p>
-                        <p>Ano fabricação: {car.YearFab}</p>
-                        <p>Cor: {car.Color}</p>
+                {this.state.listCars.length !== 0 && this.state.listCars.map((car) => (
+                    <div key={car.ID}>
+                        <div className="flex-row margin-top5 box-branco">
+                        <img className="car-img" src={car.Image} />
+                            <div>
+                                <p>Marca: {car.Make}</p>
+                                <p>Modelo: {car.Model}</p>
+                                <p>Versão: {car.Version}</p>
+                                <p>KM: {car.KM}</p>
+                                <p>Preço: {car.Price}</p>
+                                <p>Ano modelo: {car.YearModel}</p>
+                                <p>Ano fabricação: {car.YearFab}</p>
+                                <p>Cor: {car.Color}</p>
+                            </div>
+                        </div>
                     </div>
-                })}
+                ))}
                 </div>
+                {this.state.loading && <p>Carregando...</p>}
+                {!this.state.loading && <button onClick={() => this.getMorePage()}className="btn-vermais font-bold">VER MAIS</button>}
             </div>
         )
     }

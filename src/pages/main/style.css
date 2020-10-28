@@ -48,6 +48,10 @@
 .margin-top20{
     margin-top: 20px;
 }
+.margin-top5{
+    margin-top: 5px;
+    padding: 20px;
+}
 .select{
     border: 1px solid #bababa;
     border-left: 1px solid transparent;
@@ -110,6 +114,7 @@
     border: 1px solid#ca2430;
     border-radius: 4px;
     padding: 0px 60px 0px 60px;
+    cursor: pointer;
 }
 .margin-right{
     margin-right: 30px;
@@ -117,4 +122,24 @@
 .max-box{
     max-width: 933px;
     max-height: 312px;
+}
+.car-img{
+    width: 30%;
+}
+
+.btn-vermais{
+    background-color:#ca2430;
+    color: #FFFFFF;
+    font-size: 24px;
+    border: 1px solid#ca2430;
+    border-radius: 4px;
+    padding: 0px 60px 0px 60px;
+    cursor: pointer;
+    width: 100%;
+}
+.c-loader {
+  border: 6px solid #e5e5e5;
+  border-top-color: #51d4db;
+  height: 50px;
+  width: 50px;
 }
