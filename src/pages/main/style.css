@@ -1,0 +1,120 @@
+.container{
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+.box{
+    margin-top: 30px;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+.cor-vinho{
+    color: #9c3740;
+}
+.text-font32{
+    font-size: 32px;
+}
+.cor-cinza{
+    color: #959499;
+}
+.margin0{
+    margin: 0
+}
+.border-bottom-vinho{
+    border-bottom: 5px solid #9c3740;
+}
+.margin-right{
+    margin-right: 30px;
+}
+.padding{
+    padding: 10px;
+}
+.flex-row-space-between{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.btn-laranja{
+    border: 1px solid #d6a15f;
+    color: #d6a15f;
+    background-color: transparent;
+    height: 55px;
+    padding: 21px;
+}
+.box-branco{
+    background-color: #FFFFFF;
+}
+.margin-top20{
+    margin-top: 20px;
+}
+.select{
+    border: 1px solid #bababa;
+    border-left: 1px solid transparent;
+    border-radius: 2px;
+    padding-right: 5%;
+}
+.label{
+    z-index: auto;
+    margin-right: -1px;
+    border: 1px solid #bababa;
+    border-right: 1px solid transparent;
+    padding-left: 10px;
+    border-radius: 2px;
+    margin-right: -9px;
+}
+.text-select{
+    margin-top: 12px;
+    font-size: 14px;
+    margin-right: 8px;
+}
+.icon-map{
+    width: 30px;
+    height: 30px;
+    margin-top: 6px;
+}
+.margin-left{
+    margin-left: 20px;
+}
+.select-normal{
+    padding: 14px;
+    border: 1px solid #bababa;
+    border-radius: 2px;
+    padding-right: 5%;
+}
+.select-onde{
+    border: 1px solid #bababa;
+    border-left: 1px solid transparent;
+    border-radius: 2px;
+    padding-right: 9%;
+}
+
+.select-raio{
+    border: 1px solid #bababa;
+    border-left: 1px solid transparent;
+    border-radius: 2px;
+}
+
+.select-versao{
+    border: 1px solid #bababa;
+    border-left: 1px solid transparent;
+    border-radius: 2px;
+}
+.font-bold{
+    font-weight: bold;
+}
+.btn-ofertas{
+    background-color:#ca2430;
+    color: #FFFFFF;
+    font-size: 24px;
+    border: 1px solid#ca2430;
+    border-radius: 4px;
+    padding: 0px 60px 0px 60px;
+}
+.margin-right{
+    margin-right: 30px;
+}
+.max-box{
+    max-width: 933px;
+    max-height: 312px;
+}
